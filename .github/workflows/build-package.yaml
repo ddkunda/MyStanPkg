@@ -17,9 +17,14 @@ jobs:
         with:
           r-version: '4.2'
 
-      - name: Install dependencies
+      - name: Install missing dependencies for devtools
         run: |
-          Rscript -e "install.packages(c('devtools', 'usethis', 'pkgdown', 'rcmdcheck', 'rversions', 'urlchecker', 'rstantools'), dependencies=TRUE, repos='https://cloud.r-project.org')"
+          Rscript -e "install.packages(c('usethis', 'pkgdown', 'rcmdcheck', 'rversions', 'urlchecker'), repos='https://cloud.r-project.org')"
+
+      - name: Install devtools and rstantools
+        run: |
+          Rscript -e "install.packages(c('devtools''), repos='https://cloud.r-project.org', dependencies=TRUE)"
+          Rscript -e "install.packages(c('rstantools'), repos='https://cloud.r-project.org', dependencies=TRUE)"
 
       - name: Build the package
         run: |
