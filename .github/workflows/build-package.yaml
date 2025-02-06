@@ -16,19 +16,12 @@ jobs:
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: '4.2'
-
-      - name: Install missing dependencies for devtools
-        run: |
-          Rscript -e "install.packages(c('usethis', 'pkgdown', 'rcmdcheck', 'rversions', 'urlchecker'), repos='https://cloud.r-project.org')"
-
-      - name: Install missing dependencies for rstantools
-        run: |
-          Rscript -e "install.packages(c('curl', 'credentials', 'httr2', 'gert', 'gh', 'usethis'), repos='https://cloud.r-project.org')"
           
-      - name: Install devtools and rstantools
+      - name: Install remotes and devtools and rstantools
         run: |
-          Rscript -e "install.packages('devtools', repos='https://cloud.r-project.org', dependencies=TRUE)"
-          Rscript -e "install.packages('rstantools', repos='https://cloud.r-project.org', dependencies=TRUE)"
+          Rscript -e "install.packages('remotes', repos='https://cloud.r-project.org')"
+          Rscript -e "remotes::install_cran('devtools', dependencies=TRUE, repos='https://cloud.r-project.org')"
+          Rscript -e "remotes::install_cran('rstantools', dependencies=TRUE, repos='https://cloud.r-project.org')"
 
       - name: Build the package
         run: |
