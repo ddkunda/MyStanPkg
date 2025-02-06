@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          Rscript -e "install.packages(c('devtools', 'rstantools'), repos='https://cloud.r-project.org')"
+          Rscript -e "install.packages(c('devtools', 'usethis', 'pkgdown', 'rcmdcheck', 'rversions', 'urlchecker', 'rstantools'), dependencies=TRUE, repos='https://cloud.r-project.org')"
 
       - name: Build the package
         run: |
