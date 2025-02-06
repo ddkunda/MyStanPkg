@@ -20,7 +20,6 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          # These libraries are needed for magick, pkgdown, ragg, svglite, systemfonts, etc.
           sudo apt-get install -y \
             libcurl4-openssl-dev \
             libssl-dev \
@@ -31,11 +30,13 @@ jobs:
             libpng-dev \
             libtiff5-dev \
             libjpeg-dev \
-            ghostscript
+            ghostscript \
+            libharfbuzz-dev \
+            libfribidi-dev
 
       - name: Install dependencies and Build the package
         run: |
-          # Install all R packages (including devtools & rstantools) in one go
+          # Install all R packages (including devtools, pkgdown, rstantools) in one go
           Rscript -e "install.packages(c('pkgdown','rcmdcheck','rversions','urlchecker','curl','credentials','httr2','gert','gh','usethis','remotes','devtools','rstantools'), repos='https://cloud.r-project.org', dependencies=TRUE)"
           
           # Build your package in the same R session, ensuring devtools is loaded
