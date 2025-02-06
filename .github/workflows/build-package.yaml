@@ -17,11 +17,16 @@ jobs:
         with:
           r-version: '4.2'
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libgit2-dev
+
       - name: Install remotes and missing packages
         run: |
           Rscript -e "install.packages(c('curl','credentials','httr2','gert','gh','usethis','remotes'), repos='https://cloud.r-project.org')"
       
-      - name: Install remotes and devtools and rstantools
+      - name: Install devtools and rstantools
         run: |
           Rscript -e "remotes::install_cran('devtools', dependencies=TRUE, repos='https://cloud.r-project.org')"
           Rscript -e "remotes::install_cran('rstantools', dependencies=TRUE, repos='https://cloud.r-project.org')"
