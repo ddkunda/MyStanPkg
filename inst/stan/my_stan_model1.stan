@@ -29,4 +29,3 @@ model {
   drug_x_data ~ normal(mu_drug, sigma);
   placebo_data ~ normal(mu_placebo, sigma);
 }
-
