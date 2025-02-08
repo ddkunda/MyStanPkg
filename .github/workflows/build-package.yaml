@@ -34,7 +34,7 @@ jobs:
             libharfbuzz-dev \
             libfribidi-dev
 
-      - name: Install dependencies and Build the package
+      - name: Install Dependencies and Build the Package
         run: |
           # Install all R packages (including devtools, pkgdown, rstantools) in one go
           Rscript -e "install.packages(c('pkgdown','rcmdcheck','rversions','urlchecker','curl','credentials','httr2','gert','gh','usethis','remotes','devtools','rstantools'), repos='https://cloud.r-project.org', dependencies=TRUE)"
