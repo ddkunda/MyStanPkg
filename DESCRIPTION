@@ -1,0 +1,26 @@
+Package: MyStanPkg
+Title: precompiled stanmodel objects.
+Version: 0.0.1
+Authors@R: 
+    person(given = "Chris", family = "Dide-Agossou", email = "christian.dideagossou@gmail.com", role = c("aut", "cre"))
+Description: Compile a pre-defined stan model to reduce compile time during iterations.License: `use_mit_license()`, `use_gpl3_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Biarch: true
+Depends: 
+    R (>= 3.4.0)
+Imports: 
+    methods,
+    Rcpp (>= 0.12.0),
+    RcppParallel (>= 5.0.1),
+    rstan (>= 2.18.1),
+    rstantools (>= 2.4.0)
+LinkingTo: 
+    BH (>= 1.66.0),
+    Rcpp (>= 0.12.0),
+    RcppEigen (>= 0.3.3.3.0),
+    RcppParallel (>= 5.0.1),
+    rstan (>= 2.18.1),
+    StanHeaders (>= 2.18.0)
+SystemRequirements: GNU make
