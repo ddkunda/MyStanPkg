@@ -1,4 +1,4 @@
-name: Build MyStanPkg1
+name: Build MyStanPkg
 
 on:
   push:
