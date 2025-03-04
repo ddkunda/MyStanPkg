@@ -1,8 +1,8 @@
-# MyStanPkg: Pre-Compiled Stan Objects for Efficient Bayesian Analysis
+## MyStanPkg: Pre-Compiled Stan Objects for Efficient Bayesian Analysis
 
-## Description:
+### Description:
 
-### MyStanPkg is an R package designed to streamline Bayesian analysis by providing pre-compiled Stan models for key applications in drug development, including:
+##### MyStanPkg is an R package designed to streamline Bayesian analysis by providing pre-compiled Stan models for key applications in drug development, including:
 
 - Hierarchical Modeling,
 - Dose-Response Modeling, and
